@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:footballshop/widgets/left_drawer.dart';
 import 'package:footballshop/screens/productlist_form.dart';
-import 'package:footballshop/widgets/news_card.dart';
+import 'package:footballshop/widgets/product_card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});

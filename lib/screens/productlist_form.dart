@@ -94,6 +94,9 @@ class _ProductFormPageState extends State<ProductFormPage> {
                         if (int.tryParse(value) == null) {
                           return "Harga produk harus berupa angka!";
                         }
+                        if (value.contains('-')) {
+                          return "Harga produk tidak boleh negatif!";
+                        }
                         return null;
                       },
                     ),
@@ -166,6 +169,15 @@ class _ProductFormPageState extends State<ProductFormPage> {
                         setState(() {
                           _thumbnail = value!;
                         });
+                      },
+                      validator: (String? value) {
+                        if (value != null && value.isNotEmpty) {
+                          final Uri? uri = Uri.tryParse(value);
+                          if (uri == null || !uri.isAbsolute) {
+                            return "URL Thumbnail tidak valid!";
+                          }
+                        }
+                        return null;
                       },
                     ),
                   ),
